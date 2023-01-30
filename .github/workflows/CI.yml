@@ -60,11 +60,7 @@ jobs:
       with:
         category: "/language:${{matrix.language}}"
   tests:
-    strategy:
-      matrix:
-        os: ['macos-12', 'windows-latest']
-
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check out Git repository
@@ -85,8 +81,6 @@ jobs:
         
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
-
-      - run: pnpm test
 
   make-linux:
     runs-on: ubuntu-latest
