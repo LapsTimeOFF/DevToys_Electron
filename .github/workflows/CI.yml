@@ -86,6 +86,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
+      - run: pnpm test
+
   make-linux:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[NO-BUILD]')"
