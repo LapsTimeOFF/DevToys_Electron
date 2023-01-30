@@ -1,0 +1,49 @@
+/**
+ * @see https://www.electron.build/configuration/configuration
+ */
+{
+  "appId": "fr.lapstime.devtoys_electron",
+  "asar": true,
+  "directories": {
+    "output": "release/${version}"
+  },
+  "copyright": "Copyright © 2023-now ${author}",
+  "files": [
+    "dist-electron",
+    "dist"
+  ],
+  "dmg": {
+    "title": "DevToys Electron - ${version}"
+  },
+  "mac": {
+    "artifactName": "${productName}_${version}.${ext}",
+    "identity": null,
+    "target": [
+      {
+        "target": "dmg",
+        "arch": "universal",
+      }
+    ],
+  },
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      }
+    ],
+    "artifactName": "${productName}_${version}.${ext}"
+  },
+  "linux": {
+    "target": "AppImage",
+    "artifactName": "${productName}_${version}.${ext}"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "deleteAppDataOnUninstall": false
+  }
+}
