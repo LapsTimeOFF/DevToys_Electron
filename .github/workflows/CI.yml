@@ -109,6 +109,8 @@ jobs:
 
       - name: Build/release Electron app linux/x64
         run: pnpm build
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.1
@@ -143,6 +145,8 @@ jobs:
 
       - name: Build/release Electron app win32/x64
         run: pnpm build
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.1
@@ -177,6 +181,8 @@ jobs:
 
       - name: Build/release Electron app darwin/universal
         run: pnpm build
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.1
