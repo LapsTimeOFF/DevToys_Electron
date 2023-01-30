@@ -37,7 +37,7 @@
     "artifactName": "${productName}_${version}.${ext}"
   },
   "linux": {
-    "target": "AppImage",
+    "target": [{"target": "AppImage", "arch": ["arm64","x64"]}],
     "artifactName": "${productName}_${version}.${ext}"
   },
   "nsis": {

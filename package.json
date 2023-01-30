@@ -17,9 +17,10 @@
     "dev": "vite",
     "build": "tsc && vite build && electron-builder",
     "preview": "vite preview",
-    "e2e": "npx playwright test"
+    "test": "npx playwright test"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.12",
     "@playwright/test": "^1.29.2",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
@@ -27,6 +28,7 @@
     "electron": "^22.0.3",
     "electron-builder": "^23.6.0",
     "esbuild": "^0.17.5",
+    "playwright": "^1.30.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.57.1",
@@ -37,5 +39,10 @@
   },
   "engines": {
     "node": "^14.18.0 || >=16.0.0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.6"
   }
 }
