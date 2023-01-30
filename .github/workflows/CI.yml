@@ -190,12 +190,3 @@ jobs:
           name: build
           path: |
             release/**/*.dmg
-  delete-artifacts:
-    runs-on: ubuntu-latest
-    needs: ['make-windows', 'make-linux', 'make-macos']
-    if: "!contains(github.event.head_commit.message, '!')"
-
-    steps:
-      - uses: geekyeggo/delete-artifact@v2
-        with:
-            name: build
