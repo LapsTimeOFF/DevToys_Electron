@@ -1,17 +1,33 @@
 import HomeIcon from "@mui/icons-material/Home";
+import ShortTextIcon from "@mui/icons-material/ShortText";
+import { Typography } from "@mui/material";
 
 export type Page = {
   type: "page" | "cathegory";
   title: string;
   path?: string;
+  description?: string;
+  ignoreList?: boolean;
   icon?: any;
   component?: any;
 };
 
-export const Router = [
+export const Router: Array<Page> = [
   {
+    type: "page",
     title: "Home",
     path: "/",
     icon: <HomeIcon />,
-  } as Page,
+    component: <Typography sx={{ color: "text.primary" }}>Peanut</Typography>,
+  },
+  {
+    type: "cathegory",
+    title: "Generators",
+  },
+  {
+    type: "page",
+    title: "Lorem Ipsum Generator",
+    path: "/generator/lorem",
+    icon: <ShortTextIcon />,
+  },
 ];

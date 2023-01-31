@@ -1,18 +1,32 @@
-import React from "react";
 import SideBar from "./SideBar";
 import "./App.scss";
-import { Box, Container, Typography } from "@mui/material";
-import ToolCard from "./ToolCard";
+import { Grid } from "@mui/material";
+import { Router } from "@/utils/pages";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const App = () => {
+  const getRoutes = () => {
+    const routes: any = [];
+
+    Router.map((Page) => {
+      routes.push({
+        path: Page.path,
+        element: Page.component,
+      });
+    });
+
+    return routes;
+  };
+
   return (
-    <Box sx={{display: "inline-list-item"}}>
-      <SideBar />
-      {/* <Container sx={{color: "text.primary"}}>
-        <Typography>peanut</Typography>
-      </Container> */}
-      <ToolCard/>
-    </Box>
+    <Grid container spacing={2}>
+      <Grid item xs={6} md={4}>
+        <SideBar />
+      </Grid>
+      <Grid item xs={6} md={8}>
+        <RouterProvider router={createBrowserRouter(getRoutes())} />
+      </Grid>
+    </Grid>
   );
 };
 

@@ -22,13 +22,30 @@ function SideBar() {
       aria-labelledby="nested-list-subheader"
     >
       {Router.map((Page, index, array) => {
-        log("SideBar.tsx", Page, index);
-        return (
-          <ListItemButton component="a" href={Page.path} key={index}>
-            <ListItemIcon>{Page.icon}</ListItemIcon>
-            <Typography sx={{ color: "text.primary" }}>{Page.title}</Typography>
-          </ListItemButton>
-        );
+        if(Page.ignoreList) return;
+        log("SideBar.tsx", `Rendering ${Page.type === 'page' ? 'tab': Page.type} "${Page.title}"`);
+
+        switch (Page.type) {
+          case "cathegory":
+            return (
+              <ListSubheader component="div" id="nested-list-subheader" key={index}>
+                {Page.title}
+              </ListSubheader>
+            );
+
+          case "page":
+            return (
+              <ListItemButton component="a" href={Page.path} key={index} sx={{bgcolor: window.location.pathname === Page.path ? 'action.hover' : 'background.default'}}>
+                <ListItemIcon>{Page.icon}</ListItemIcon>
+                <Typography sx={{ color: "text.primary" }}>
+                  {Page.title}
+                </Typography>
+              </ListItemButton>
+            );
+
+          default:
+            break;
+        }
       })}
 
       {/* <ListSubheader component="div" id="nested-list-subheader">
