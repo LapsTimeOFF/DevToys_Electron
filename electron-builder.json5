@@ -6,7 +6,7 @@
   "productName": "DevToys Electron",
   "asar": true,
   "directories": {
-    "output": "release/${version}"
+    "output": "release/"
   },
   "copyright": "Copyright © 2023-now ${author}",
   "files": [
