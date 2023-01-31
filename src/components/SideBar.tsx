@@ -5,13 +5,11 @@ import {
   ListSubheader,
   Typography,
 } from "@mui/material";
-import DraftsIcon from "@mui/icons-material/Drafts";
 import { log } from "../utils/node-api";
 import { Router } from "@/utils/pages";
 
-log("SideBar.tsx", `SideBar loaded`);
-
 function SideBar() {
+  log("SideBar.tsx", `Starting rendering SideBar`);
   return (
     <List
       sx={{
@@ -24,12 +22,10 @@ function SideBar() {
       aria-labelledby="nested-list-subheader"
     >
       {Router.map((Page, index, array) => {
-        log("SideBar.tsx", )
+        log("SideBar.tsx", Page, index);
         return (
           <ListItemButton component="a" href={Page.path} key={index}>
-            <ListItemIcon>
-              {Page.icon}
-            </ListItemIcon>
+            <ListItemIcon>{Page.icon}</ListItemIcon>
             <Typography sx={{ color: "text.primary" }}>{Page.title}</Typography>
           </ListItemButton>
         );
