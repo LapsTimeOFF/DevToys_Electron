@@ -61,6 +61,7 @@ jobs:
         category: "/language:${{matrix.language}}"
   test-windows:
     runs-on: windows-latest
+    needs: test-dep
 
     steps:
       - name: Check out Git repository
@@ -82,13 +83,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
+      - name: Install TSC
+        run: pnpm i typescript
+
       - name: Build the code
-        run: tsc
+        run: npx tsc
 
       - name: Run the tests
         run: pnpm t
   test-macos:
     runs-on: macos-12
+    needs: test-dep
 
     steps:
       - name: Check out Git repository
@@ -110,8 +115,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
+      - name: Install TSC
+        run: pnpm i typescript
+
       - name: Build the code
-        run: tsc
+        run: npx tsc
 
       - name: Run the tests
         run: pnpm t
