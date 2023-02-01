@@ -22,20 +22,39 @@ function SideBar() {
       aria-labelledby="nested-list-subheader"
     >
       {Router.map((Page, index, array) => {
-        if(Page.ignoreList) return;
-        log("SideBar.tsx", `Rendering ${Page.type === 'page' ? 'tab': Page.type} "${Page.title}"`);
+        if (Page.ignoreList) return;
+        log(
+          "SideBar.tsx",
+          `Rendering ${Page.type === "page" ? "tab" : Page.type} "${
+            Page.title
+          }"`
+        );
 
         switch (Page.type) {
           case "cathegory":
             return (
-              <ListSubheader component="div" id="nested-list-subheader" key={index}>
+              <ListSubheader
+                component="div"
+                id="nested-list-subheader"
+                key={index}
+              >
                 {Page.title}
               </ListSubheader>
             );
 
           case "page":
             return (
-              <ListItemButton component="a" href={Page.path} key={index} sx={{bgcolor: window.location.pathname === Page.path ? 'action.hover' : 'background.default'}}>
+              <ListItemButton
+                component="a"
+                href={Page.path}
+                key={index}
+                sx={{
+                  bgcolor:
+                    window.location.pathname === Page.path
+                      ? "action.hover"
+                      : "background.default",
+                }}
+              >
                 <ListItemIcon>{Page.icon}</ListItemIcon>
                 <Typography sx={{ color: "text.primary" }}>
                   {Page.title}
@@ -47,22 +66,6 @@ function SideBar() {
             break;
         }
       })}
-
-      {/* <ListSubheader component="div" id="nested-list-subheader">
-        Drafts
-      </ListSubheader>
-      <ListItemButton>
-        <ListItemIcon>
-          <DraftsIcon />
-        </ListItemIcon>
-        <Typography sx={{ color: "text.primary" }}>Drafts</Typography>
-      </ListItemButton>
-      <ListItemButton>
-        <ListItemIcon>
-          <DraftsIcon />
-        </ListItemIcon>
-        <Typography sx={{ color: "text.primary" }}>Drafts</Typography>
-      </ListItemButton> */}
     </List>
   );
 }

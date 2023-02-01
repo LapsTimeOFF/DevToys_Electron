@@ -59,7 +59,9 @@ async function createWindow() {
     // Open devTool if the app is not packaged
     win.webContents.openDevTools()
   } else {
-    win.loadFile(indexHtml)
+    require('express')().get('*', (_,res) => {res.sendFile(indexHtml)}).listen(7777, () => {console.log('OK')})
+
+    win.loadURL('http://localhost:7777/')
   }
 
   // Test actively push message to the Electron-Renderer

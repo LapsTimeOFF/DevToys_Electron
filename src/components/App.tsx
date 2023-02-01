@@ -19,7 +19,7 @@ const App = () => {
   };
 
   return (
-    <Grid container spacing={2}>
+    <Grid container>
       <Grid item xs={6} md={4}>
         <SideBar />
       </Grid>
