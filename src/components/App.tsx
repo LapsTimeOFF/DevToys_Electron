@@ -1,6 +1,4 @@
-import SideBar from "./SideBar";
 import "./App.scss";
-import { Grid } from "@mui/material";
 import { Router } from "@/utils/pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -19,16 +17,9 @@ const App = () => {
   };
 
   return (
-    <Grid container>
-      <Grid item xs={6} md={4}>
-        <SideBar />
-      </Grid>
-      <Grid item xs={6} md={8}>
-        <RouterProvider
-          router={createBrowserRouter(getRoutes())}
-        />
-      </Grid>
-    </Grid>
+    <RouterProvider
+      router={createBrowserRouter(getRoutes())}
+    />
   );
 };
 

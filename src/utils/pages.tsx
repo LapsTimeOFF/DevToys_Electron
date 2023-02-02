@@ -1,3 +1,4 @@
+import LoremIpsum from "@/Pages/generators/LoremIpsum";
 import Home from "@/Pages/Home";
 import HomeIcon from "@mui/icons-material/Home";
 import ShortTextIcon from "@mui/icons-material/ShortText";
@@ -30,5 +31,6 @@ export const Router: Array<Page> = [
     title: "Lorem Ipsum Generator",
     path: "/generator/lorem",
     icon: <ShortTextIcon />,
+    component: <LoremIpsum />
   }
 ];

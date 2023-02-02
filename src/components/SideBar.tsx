@@ -45,9 +45,10 @@ function SideBar() {
 
           case "page":
             return (
+              // @ts-ignore
               <ListItemButton
-                component="a"
-                href={Page.path}
+                component={Link}
+                to={Page.path}
                 key={index}
                 sx={{
                   bgcolor:

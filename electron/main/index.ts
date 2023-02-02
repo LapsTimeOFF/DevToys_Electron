@@ -64,8 +64,10 @@ async function createWindow() {
     const http = require("http");
 
     const server = http.createServer((request, response) => {
-      return handler(request, response);
+      return handler(request, response, {public: `${indexHtml}/../`});
     });
+
+    console.log(__dirname)
 
     server.listen(7777, () => {
       console.log("Running at http://localhost:7777");
