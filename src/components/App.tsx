@@ -24,7 +24,9 @@ const App = () => {
         <SideBar />
       </Grid>
       <Grid item xs={6} md={8}>
-        <RouterProvider router={createBrowserRouter(getRoutes())} />
+        <RouterProvider
+          router={createBrowserRouter(getRoutes())}
+        />
       </Grid>
     </Grid>
   );

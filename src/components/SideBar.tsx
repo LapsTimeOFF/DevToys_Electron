@@ -6,6 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import { log } from "../utils/node-api";
+import { Link } from "react-router-dom";
 import { Router } from "@/utils/pages";
 
 function SideBar() {
