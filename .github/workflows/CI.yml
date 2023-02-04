@@ -106,7 +106,7 @@ jobs:
         
       - name: Install dependencies
         run: npm install
-        
+
       - name: Build/release Electron app linux/x64
         run: pnpm build
         env:
@@ -178,6 +178,8 @@ jobs:
         
       - name: Install dependencies
         run: npm install
+
+      - run: npm i dmg-builder
 
       - name: Build/release Electron app darwin/universal
         run: pnpm build
