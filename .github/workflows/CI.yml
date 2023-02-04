@@ -105,8 +105,8 @@ jobs:
           version: 7.21.0
         
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
-
+        run: npm install
+        
       - name: Build/release Electron app linux/x64
         run: pnpm build
         env:
@@ -141,7 +141,7 @@ jobs:
           version: 7.21.0
         
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: npm install
 
       - name: Build/release Electron app win32/x64
         run: pnpm build
@@ -177,7 +177,7 @@ jobs:
           version: 7.21.0
         
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: npm install
 
       - name: Build/release Electron app darwin/universal
         run: pnpm build

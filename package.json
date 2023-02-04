@@ -71,6 +71,7 @@
     "body-parser": "^1.20.1",
     "brace-expansion": "^2.0.1",
     "depd": "^2.0.0",
+    "dmg-builder": "^24.0.0-alpha.11",
     "express": "^4.18.2",
     "lorem-ipsum": "^2.0.8",
     "react-router-dom": "^6.8.0",
